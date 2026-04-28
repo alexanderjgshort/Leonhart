@@ -65,6 +65,9 @@ Progress Update #3
 - Modified prebuilt ti-am625-sk.dts file with only UART pinmux (UART5) for my custom board, and build .dtb file from that, then copied it to eMMC
 - Tested UART5 communication with Sparkfun Things Matter MGM240P and saw output on SOC UART terminal
 
+Progress Update #4
+- Had issue with USB C power showing incorrect voltage for 5V rail (2.2V), so I used the bench power supply for dummy power. I have found that the bodged 3.3V injection setup causes the 2.2V at the USB C VBUS pins, which prevents USB C from sending power. Without the bodged setup (correct 5V->3.3V buck converter footprint) in the next revision, USB C power should work as intended
+
 Next steps:
 - Get full communication with off-board MGM240P
 - Boot Silicon Labs network stack
